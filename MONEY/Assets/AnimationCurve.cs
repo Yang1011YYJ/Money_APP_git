@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class AnimationCurve : MonoBehaviour
 {
-    AnimationCurve Curve;
+    public AnimationCurve Curve;
 }
