@@ -17,6 +17,10 @@ public class MoneyRecordManager : MonoBehaviour
     [Tooltip("目前選擇的是支出還是收入")][SerializeField]RecordType currentRecoedType = RecordType.Expense;
     [Tooltip("儲存目前建立的所有帳目")][SerializeField]List<MoneyRecord> moneyRecords = new List<MoneyRecord>();
 
+    [Header("帳目顯示")]
+    [Tooltip("單筆資料的prefeb")] public GameObject recordItemPrefab;
+    [Tooltip("顯示每日帳目的content")] public Transform dailyRecordContent;
+
     //將目前帳目類型設定為支出
     public void SelectExpense()
     {
@@ -121,14 +125,48 @@ public class MoneyRecordManager : MonoBehaviour
         return moneyRecords;
     }
     // Start is called before the first frame update
-    void Start()
+    
+    //更新目前選取日期的帳目顯示清單
+    public void RefreshDailyRecord()
     {
-        
-    }
+        // 檢查日曆控制腳本是否已正確連接。
+        if (calenderControllScript == null)
+        {
+            // 如果沒有連接，就顯示錯誤訊息。
+            Debug.LogError("MoneyRecordManager 的 Calender Controll 尚未連接。");
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            // 中止清單更新。
+            return;
+        }
+
+        // 檢查單筆帳目 Prefab 是否已正確連接。
+        if (recordItemPrefab == null)
+        {
+            // 如果沒有連接，就顯示錯誤訊息。
+            Debug.LogError("MoneyRecordManager 的 Record Item Prefab 尚未連接。");
+
+            // 中止清單更新。
+            return;
+        }
+
+        // 檢查帳目顯示區域是否已正確連接。
+        if (dailyRecordContent == null)
+        {
+            // 如果沒有連接，就顯示錯誤訊息。
+            Debug.LogError("MoneyRecordManager 的 Daily Record Content 尚未連接。");
+
+            // 中止清單更新。
+            return;
+        }
+
+        //逐一取得content底下已顯示的帳目物件
+        foreach(Transform child in dailyRecordContent)
+        {
+            //刪除舊物件，避免切換日期後累積
+            Destroy(child.gameObject);
+        }
+
+        //從日曆控制器取得目前選擇日期
+
     }
 }
