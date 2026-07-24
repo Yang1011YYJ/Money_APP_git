@@ -16,6 +16,10 @@ public class CalenderControll : MonoBehaviour
     [SerializeField] private CalenderDayCell selectedDayCell;
     [Tooltip("假日資料管理器")] public HolidayManager holidayManager;
 
+    [Header("選取日期")]
+    // 儲存目前被使用者選取的完整日期。
+    [SerializeField]private DateTime selectedDate;
+
     [Header("目前時間")]
     [SerializeField] int currentYear;
     [SerializeField] int currentMonth;
@@ -203,8 +207,8 @@ public class CalenderControll : MonoBehaviour
         // 開啟目前選取日期格的亮框。
         selectedDayCell.SetSelected(true);
 
-        // 取得目前選取日期格所代表的完整日期。
-        DateTime selectedDate = selectedDayCell.GetDate();
+        // 從目前選取的日期格取得完整日期，並保存到控制器欄位中。
+        selectedDate = selectedDayCell.GetDate();
 
         // 將選取日期顯示。
         selectedDateText.text = $"{selectedDate.Year} 年 {selectedDate.Month} 月 {selectedDate.Day} 日";
@@ -253,5 +257,12 @@ public class CalenderControll : MonoBehaviour
                 return;
             }
         }
+    }
+
+    // 提供其他腳本取得目前選取的日期。
+    public DateTime GetSelectedDate()
+    {
+        // 回傳目前保存的選取日期。
+        return selectedDate;
     }
 }
