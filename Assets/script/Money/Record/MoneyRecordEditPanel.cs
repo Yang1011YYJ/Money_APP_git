@@ -94,6 +94,9 @@ public class MoneyRecordEditPanel : MonoBehaviour
         // 檢查帳目管理器是否存在。
         if (MoneyRecordManagerScript != null)
         {
+            //將修改的帳目資料儲存到本機
+            MoneyRecordManagerScript.SaveToFile();
+
             // 重新顯示目前日期的帳目清單。
             MoneyRecordManagerScript.RefreshDailyRecords();
         }

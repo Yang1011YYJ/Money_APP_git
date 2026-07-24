@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using System.IO;
+using Newtonsoft.Json;
 
 public class MoneyRecordManager : MonoBehaviour
 {
@@ -23,6 +25,124 @@ public class MoneyRecordManager : MonoBehaviour
 
     [Tooltip("帳目編輯面板")] public MoneyRecordEditPanel editRecordPanel;
 
+    [Header("資料儲存")]
+    [Tooltip("儲存檔案名稱")] public string saveFileName = "moneyRecords.json";
+
+    //取得完整的帳目檔案儲存路徑
+    string SaveFilePath
+    {
+        get
+        {
+            return Path.Combine(Application.persistentDataPath, saveFileName);
+        }
+    }
+
+    private void Awake()
+    {
+        LoadFromFile();
+    }
+
+    //當app暫停或進入背景時執行
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)//正在暫停狀態
+        {
+            SaveToFile();
+        }
+    }
+
+    //當APP關閉時執行
+    private void OnApplicationQuit()
+    {
+        SaveToFile();
+    }
+    public void SaveToFile()
+    {
+        try
+        {
+            //將帳目清單轉換為格式化後的JSON文字
+            string json = JsonConvert.SerializeObject(moneyRecords, Formatting.Indented);
+
+            // 將 JSON 文字寫入指定檔案。
+            // 如果檔案不存在，會自動建立。
+            // 如果檔案已存在，會覆蓋成最新內容。
+            File.WriteAllText(
+                SaveFilePath,
+                json);
+
+            Debug.Log(
+                $"帳目資料儲存成功，" +
+                $"共儲存 {moneyRecords.Count} 筆資料。\n" +
+                $"儲存位置:{SaveFilePath}");
+        }
+        catch (Exception exception){
+                Debug.LogError($"帳目資料儲存失敗:{exception.Message}");
+            }
+        }
+
+    //從本機json檔案讀取帳目資料
+    public void LoadFromFile()
+    {
+        try
+        {
+            //判斷儲存檔案是否存在
+            if (!File.Exists(SaveFilePath))
+            {
+                //第一次啟動沒有檔案，建立空清單
+                moneyRecords = new List<MoneyRecord>();
+
+                //顯示沒有舊資料
+                Debug.Log(
+                    $"尚未找到帳目儲存檔案，" +
+                    $"將從空白資料開始。\n" +
+                    $"預計儲存位置: {SaveFilePath}");
+
+                return;
+            }
+            //讀取存檔中的所有JSON文字
+            string json = File.ReadAllText(SaveFilePath);
+
+            //判斷是否為空
+            if (string.IsNullOrWhiteSpace(json))
+            {
+                //空檔案視為沒有資料
+                moneyRecords = new List<MoneyRecord>();
+
+                Debug.LogWarning("帳目儲存檔案存在，但內容是空的。");
+
+                return;
+            }
+
+            //將json轉回moneyrecord清單
+            List<MoneyRecord> loadedRecords = JsonConvert.DeserializeObject<List<MoneyRecord>>(json);
+
+            //判斷解析後的清單是否存在
+            if (loadedRecords == null)
+            {
+                //解析為空的時候使用新的空清單
+                moneyRecords = new List<MoneyRecord>();
+            }
+            else
+            {
+                //將讀取到的帳目保存到目前使用中的清單
+                moneyRecords = loadedRecords;
+            }
+
+            //顯示
+            Debug.Log(
+                $"帳目資料讀取成功，" +
+                $"共載入 {moneyRecords.Count} 筆資料。\n" +
+                $"讀取位置: {SaveFilePath}");
+        }
+        catch (Exception exception)
+        {
+            //當檔案讀取失敗或損壞先建立新資料
+            moneyRecords = new List<MoneyRecord>();
+
+            //顯示讀取失敗原因
+            Debug.LogError($"帳目資料讀取失敗:{exception.Message}");
+        }
+    } 
     //將目前帳目類型設定為支出
     public void SelectExpense()
     {
@@ -107,6 +227,9 @@ public class MoneyRecordManager : MonoBehaviour
 
         //將新帳目加入帳目清單
         moneyRecords.Add(newRecord);
+
+        //將清單儲存到本機
+        SaveToFile();
 
         // 新帳目建立後，立即更新目前日期的帳目清單。
         RefreshDailyRecords();
