@@ -21,6 +21,8 @@ public class MoneyRecordManager : MonoBehaviour
     [Tooltip("單筆資料的prefeb")] public GameObject recordItemPrefab;
     [Tooltip("顯示每日帳目的content")] public Transform dailyRecordContent;
 
+    [Tooltip("帳目編輯面板")] public MoneyRecordEditPanel editRecordPanel;
+
     //將目前帳目類型設定為支出
     public void SelectExpense()
     {
@@ -106,6 +108,9 @@ public class MoneyRecordManager : MonoBehaviour
         //將新帳目加入帳目清單
         moneyRecords.Add(newRecord);
 
+        // 新帳目建立後，立即更新目前日期的帳目清單。
+        RefreshDailyRecords();
+
         // 在 Console 顯示剛建立的帳目，方便確認資料是否正確。
         Debug.Log(
             $"新增帳目成功：" +
@@ -127,7 +132,7 @@ public class MoneyRecordManager : MonoBehaviour
     // Start is called before the first frame update
     
     //更新目前選取日期的帳目顯示清單
-    public void RefreshDailyRecord()
+    public void RefreshDailyRecords()
     {
         // 檢查日曆控制腳本是否已正確連接。
         if (calenderControllScript == null)
@@ -167,6 +172,41 @@ public class MoneyRecordManager : MonoBehaviour
         }
 
         //從日曆控制器取得目前選擇日期
+        DateTime selectedDate = calenderControllScript.GetSelectedDate();
 
+        //轉換日期格式
+        string selectedDateText = selectedDate.ToString("yyyy-MM-dd");
+
+        //逐一檢查所有帳目項目
+        for(int i = 0; i < moneyRecords.Count; i++)
+        {
+            //取得目前正在檢查的項目
+            MoneyRecord record = moneyRecords[i];
+
+            //判斷資料是否存在
+            if(record == null) { continue; }
+
+            //判斷目前這筆資料是否不是當前選取的日期
+            if(record.date != selectedDateText) { continue; }
+
+            //在DailyRecordContent下建立一個Prefab
+            GameObject recordItemObject = Instantiate(recordItemPrefab/*要建立的物件*/, dailyRecordContent/*要建立的位置*/);
+
+            //從新產生的物件取得moneyRecordItem腳本
+            MoneyRecordItem recordItem = recordItemObject.GetComponent<MoneyRecordItem>();
+
+            //判斷prefab上有沒有掛載這個腳本
+            if(recordItem == null)
+            {
+                Debug.LogError("RecordItem Prefab上沒有MoneyRecordITem這個腳本。");
+
+                Destroy(recordItemObject);
+
+                continue;
+            }
+
+            //將帳目資料傳給recordItem顯示
+            recordItem.SetUP(record,editRecordPanel);
+        }
     }
 }

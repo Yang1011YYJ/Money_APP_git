@@ -15,6 +15,7 @@ public class CalenderControll : MonoBehaviour
     // 儲存目前被選取的日期格。
     [SerializeField] private CalenderDayCell selectedDayCell;
     [Tooltip("假日資料管理器")] public HolidayManager holidayManager;
+    [Tooltip("記帳資料管理器")] public MoneyRecordManager moneyRecordManager;
 
     [Header("選取日期")]
     // 儲存目前被使用者選取的完整日期。
@@ -212,6 +213,13 @@ public class CalenderControll : MonoBehaviour
 
         // 將選取日期顯示。
         selectedDateText.text = $"{selectedDate.Year} 年 {selectedDate.Month} 月 {selectedDate.Day} 日";
+
+        // 判斷記帳資料管理器是否已經正確連接。
+        if (moneyRecordManager != null)
+        {
+            // 根據剛選取的日期重新顯示當天帳目。
+            moneyRecordManager.RefreshDailyRecords();
+        }
     }
 
     //根據顯示的月份決定要亮特定日期還是1號
