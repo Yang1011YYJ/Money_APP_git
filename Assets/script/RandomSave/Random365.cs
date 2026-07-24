@@ -23,7 +23,7 @@ public class Random365 : MonoBehaviour
 
     [Tooltip("∏}•ª")]
     public EventSystem eventSystem;
-    public EditManager EditManagerScript;
+    public REditManager EditManagerScript;
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,7 +35,7 @@ public class Random365 : MonoBehaviour
         num = 0;
         UpdateUI();
         Debug.Log("¶s¿…¶Ï∏m°G" + Application.persistentDataPath);
-        EditManagerScript = eventSystem.GetComponent<EditManager>();
+        EditManagerScript = eventSystem.GetComponent<REditManager>();
         //if () == 365)
         //{
 

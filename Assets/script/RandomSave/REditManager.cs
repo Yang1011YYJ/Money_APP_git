@@ -5,7 +5,7 @@ using System.Linq;
 using TMPro;
 using static UnityEngine.EventSystems.EventTrigger;
 
-public class EditManager : MonoBehaviour
+public class REditManager : MonoBehaviour
 {
     public GameObject editPanel;
     public Transform contentArea;
