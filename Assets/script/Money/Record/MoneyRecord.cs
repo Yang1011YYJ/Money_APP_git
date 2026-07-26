@@ -21,6 +21,15 @@ public class MoneyRecord
 
     // 儲存這筆帳目是收入還是支出。
     public RecordType recordType;
+
+    // 儲存帳目的品項，例如午餐、咖啡或捷運。
+    public string itemName;
+
+    // 儲存帳目的付款方式，例如現金、信用卡或 LINE Pay。
+    public string paymentMethod;
+
+    // 儲存使用者額外輸入的備註資訊。
+    public string note;
 }
 
 // 定義帳目類型，讓程式只能選擇收入或支出。

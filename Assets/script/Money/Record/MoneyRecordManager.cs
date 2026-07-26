@@ -160,90 +160,43 @@ public class MoneyRecordManager : MonoBehaviour
     }
 
     //儲存帳目
-    public void AddRecord()
+    public void AddRecord(MoneyRecord newRecord)
     {
-        // 檢查金額輸入欄位是否已經在 Inspector 中連接。
-        if (amountInput == null)
+        // 檢查傳入的帳目是否存在。
+        if (newRecord == null)
         {
-            // 如果沒有連接，在 Console 顯示錯誤訊息。
-            Debug.LogError("MoneyRecordManager 的 Amount Input 尚未連接。");
+            // 顯示錯誤訊息。
+            Debug.LogError("新增帳目時沒有收到 MoneyRecord。");
 
-            // 中止新增帳目。
+            // 中止新增。
             return;
         }
 
-        // 檢查分類選單是否已經在 Inspector 中連接。
-        if (categoryDropdown == null)
+        // 檢查帳目金額是否有效。
+        if (newRecord.amount <= 0)
         {
-            // 如果沒有連接，在 Console 顯示錯誤訊息。
-            Debug.LogError("MoneyRecordManager 的 Category Dropdown 尚未連接。");
+            // 顯示錯誤訊息。
+            Debug.LogWarning("帳目金額必須大於0。");
 
-            // 中止新增帳目。
+            // 中止新增。
             return;
         }
 
-        // 檢查日曆控制腳本是否已經在 Inspector 中連接。
-        if (calenderControllScript == null)
+        // 帳目沒有唯一編號時，自動建立。
+        if (string.IsNullOrWhiteSpace(newRecord.id))
         {
-            // 如果沒有連接，在 Console 顯示錯誤訊息。
-            Debug.LogError("MoneyRecordManager 的 Calender Controll 尚未連接。");
-
-            // 中止新增帳目。
-            return;
+            // 建立唯一識別碼。
+            newRecord.id = Guid.NewGuid().ToString();
         }
 
-        //把金額欄位的文字換成分數
-        bool amountSuccess = int.TryParse(amountInput.text, out int amount);
-
-        //金額轉換失敗或小於等於0
-        if(!amountSuccess || amount <= 0)
-        {
-            Debug.LogWarning("請輸入大於0的正確金額。");
-            //終止新增項目
-            return;
-        }
-
-        //取得分類的文字
-        string selectedCategory = categoryDropdown.options[categoryDropdown.value].text;
-
-        //取得目前日期
-        DateTime selectedDate = calenderControllScript.GetSelectedDate();
-
-        //建立新的帳目資料
-        MoneyRecord newRecord = new MoneyRecord();
-
-        //建立唯一識別碼
-        newRecord.id = Guid.NewGuid().ToString();
-
-        //將日期轉換為yyyy-MM-dd格式保存
-        newRecord.date = selectedDate.ToString("yyyy-MM-dd");
-
-        //保存輸入的金額
-        newRecord.amount = amount;
-        //保存分類
-        newRecord.category = selectedCategory;
-        //保存支出還是收入
-        newRecord.recordType = currentRecoedType;
-
-        //將新帳目加入帳目清單
+        // 將帳目加入資料清單。
         moneyRecords.Add(newRecord);
 
-        //將清單儲存到本機
+        // 儲存到本機。
         SaveToFile();
 
-        // 新帳目建立後，立即更新目前日期的帳目清單。
+        // 更新目前日期的帳目清單。
         RefreshDailyRecords();
-
-        // 在 Console 顯示剛建立的帳目，方便確認資料是否正確。
-        Debug.Log(
-            $"新增帳目成功：" +
-            $"日期={newRecord.date}，" +
-            $"類型={newRecord.recordType}，" +
-            $"分類={newRecord.category}，" +
-            $"金額={newRecord.amount}");
-
-        // 清空金額輸入欄位，方便輸入下一筆。
-        amountInput.text = "";
     }
 
     // 提供其他腳本取得全部帳目。
