@@ -26,30 +26,39 @@ public class CalenderControll : MonoBehaviour
     [SerializeField] int currentMonth;
 
     // Start is called before the first frame update
+    // Start is called before the first frame update
     void Start()
     {
-        DateTime today = DateTime.Today;//抓取今天日期
+        // 取得今天日期。
+        DateTime today = DateTime.Today;
 
-        currentYear = today.Year;//今天年分
-        currentMonth = today.Month;//今天月份
+        // 設定目前年份為今年。
+        currentYear = today.Year;
+
+        // 設定目前月份為本月。
+        currentMonth = today.Month;
+
+        // 先立刻顯示一般日曆。
+        // 不等待假日 API，避免畫面進入時有明顯延遲。
+        RefreshCalender();
 
         // 判斷 HolidayManager 是否已經在 Inspector 中連接。
         if (holidayManager != null)
         {
-            // 啟動下載假日資料的 Coroutine。
+            // 在背景開始下載假日資料。
             StartCoroutine(
                 holidayManager.LoadHolidayData(
-                    // API 下載完成後執行 RefreshCalender。
-                    RefreshCalender));
+                    // 假日資料載入完成後，只更新假日顯示。
+                    RefreshHolidayDisplay
+                )
+            );
         }
         else
         {
-            // 如果沒有 HolidayManager，仍然先顯示一般日曆。
-            RefreshCalender();
-
             // 在 Console 顯示提醒。
             Debug.LogWarning(
-                "CalenderControll 尚未連接 HolidayManager，因此不會顯示假日。");
+                "CalenderControll 尚未連接 HolidayManager，因此不會顯示假日。"
+            );
         }
     }
 
@@ -178,6 +187,41 @@ public class CalenderControll : MonoBehaviour
 
         // 日期格全部更新完成後，自動選取今天或該月1號。
         SelectDefaultDate();
+    }
+
+    // 假日資料下載完成後，只更新目前畫面上的假日狀態。
+    private void RefreshHolidayDisplay()
+    {
+        // 逐一檢查所有日期格。
+        for (int i = 0; i < daycells.Count; i++)
+        {
+            // 如果這一格沒有連接物件，就跳過。
+            if (daycells[i] == null)
+            {
+                // 繼續處理下一格。
+                continue;
+            }
+
+            // 取得這一格代表的日期。
+            DateTime date = daycells[i].GetDate();
+
+            // 判斷這個日期是否屬於目前顯示的年月。
+            // 這可以順便排除 ShowEmpty() 的空白格。
+            if (
+                date.Year != currentYear ||
+                date.Month != currentMonth)
+            {
+                // 空白格或非本月日期不處理。
+                continue;
+            }
+
+            // 查詢這一天是否為假日。
+            bool isHoliday =
+                holidayManager.IsHoliday(date);
+
+            // 更新日期格上的假日標記。
+            daycells[i].SetHoliday(isHoliday);
+        }
     }
 
     public void SelectDate(CalenderDayCell clickedDayCell)// 當使用者點擊某個日期格時，由 CalendarDayCell 呼叫這個方法。

@@ -19,6 +19,9 @@ public class MoneyRecord
     // 儲存這筆帳目的分類，例如餐飲、交通或娛樂。
     public string category;
 
+    // 儲存帳目的小分類，例如午餐、捷運、服飾。
+    public string subCategory;
+
     // 儲存這筆帳目是收入還是支出。
     public RecordType recordType;
 

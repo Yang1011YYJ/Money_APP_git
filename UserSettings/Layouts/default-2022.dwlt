@@ -14,19 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    x: 658.4
+    x: 502.4
     y: 50.4
-    width: 876.8
+    width: 1026.4
     height: 764.8
-=======
-    x: 7.2000003
-    y: 50.4
-    width: 1032.8
-    height: 758.4
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -51,13 +44,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    width: 876.8
+    width: 1026.4
     height: 764.8
-=======
-    width: 1032.8
-    height: 758.4
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -81,11 +69,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    width: 876.8
-=======
-    width: 1032.8
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+    width: 1026.4
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -106,13 +90,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
     y: 744.8
-    width: 876.8
-=======
-    y: 738.4
-    width: 1032.8
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+    width: 1026.4
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -136,21 +115,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    width: 876.8
+    width: 1026.4
     height: 714.8
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 28
-=======
-    width: 1032.8
-    height: 708.4
-  m_MinSize: {x: 300, y: 100}
-  m_MaxSize: {x: 24288, y: 16192}
-  vertical: 0
-  controlID: 112
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+  controlID: 98
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,28 +131,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    width: 320.8
+    width: 493.6
     height: 714.8
-=======
-    width: 300
-    height: 708.4
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
-  m_MinSize: {x: 101, y: 121}
+  m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 14}
+  m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   - {fileID: 14}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -200,25 +165,14 @@ MonoBehaviour:
   - {fileID: 9}
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    x: 320.8
+    x: 493.6
     y: 0
-    width: 259.2
+    width: 240.80002
     height: 714.8
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
   controlID: 29
-=======
-    x: 300
-    y: 0
-    width: 364.8
-    height: 708.4
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 8096, y: 16192}
-  vertical: 1
-  controlID: 63
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -236,17 +190,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    width: 259.2
-    height: 384
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-=======
-    width: 364.8
-    height: 382.4
+    width: 240.80002
+    height: 384.8
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -268,15 +215,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    y: 384
-    width: 259.2
-    height: 330.8
-=======
-    y: 382.4
-    width: 364.8
-    height: 326.00003
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+    y: 384.8
+    width: 240.80002
+    height: 330
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 18}
@@ -302,25 +243,14 @@ MonoBehaviour:
   - {fileID: 12}
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    x: 580
+    x: 734.4
     y: 0
-    width: 296.8
+    width: 292
     height: 714.8
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 82
-=======
-    x: 664.8
-    y: 0
-    width: 368.00006
-    height: 708.4
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 8096, y: 16192}
-  vertical: 1
-  controlID: 113
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+  controlID: 99
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -338,17 +268,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    width: 296.8
+    width: 292
     height: 433.6
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
-=======
-    width: 368.00006
-    height: 538.4
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -370,21 +293,12 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
     y: 433.6
-    width: 296.8
+    width: 292
     height: 281.19998
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
-=======
-    y: 538.4
-    width: 368.00006
-    height: 170
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 16}
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
   m_Panes:
   - {fileID: 20}
   - {fileID: 16}
@@ -426,11 +340,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-  m_LastSelectedObjectID: -30714
-=======
-  m_LastSelectedObjectID: 25380
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+  m_LastSelectedObjectID: 56698
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -451,17 +361,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    x: 658.4
+    x: 502.4
     y: 80.8
-    width: 319.8
+    width: 492.6
     height: 693.8
-=======
-    x: 7.2000003
-    y: 80.8
-    width: 299
-    height: 687.4
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -478,7 +381,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1080, y: 1920}
+  m_TargetSize: {x: 1080, y: 2400}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -487,7 +390,7 @@ MonoBehaviour:
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 08000000000000000000000011000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 07000000000000000000000014000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
@@ -495,8 +398,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -432
     m_HBaseRangeMax: 432
-    m_VBaseRangeMin: -768
-    m_VBaseRangeMax: 768
+    m_VBaseRangeMin: -960
+    m_VBaseRangeMax: 960
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -505,7 +408,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -514,40 +417,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-      width: 319.8
+      width: 492.6
       height: 672.8
     m_Scale: {x: 0.35041666, y: 0.35041666}
-    m_Translation: {x: 159.9, y: 336.4}
-=======
-      width: 299
-      height: 666.4
-    m_Scale: {x: 0.3460648, y: 0.3460648}
-    m_Translation: {x: 149.5, y: 333.2}
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+    m_Translation: {x: 246.3, y: 336.4}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-      x: -456.3139
+      x: -702.87756
       y: -960
-      width: 912.6278
+      width: 1405.7551
       height: 1920
     m_MinimalGUI: 1
   m_defaultScale: 0.35041666
-  m_LastWindowPixelSize: {x: 399.75, y: 867.25}
-=======
-      x: -432
-      y: -962.8255
-      width: 864
-      height: 1925.651
-    m_MinimalGUI: 1
-  m_defaultScale: 0.3460648
-  m_LastWindowPixelSize: {x: 373.75, y: 859.25}
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+  m_LastWindowPixelSize: {x: 615.75, y: 867.25}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -573,9 +459,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 19
-    width: 319.8
+    x: 502.4
+    y: 80.8
+    width: 492.6
     height: 693.8
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -669,7 +555,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -37.299988, y: 24.8}
+      snapOffset: {x: -112, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 1
       id: Orientation
@@ -712,7 +598,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Cloth Constraints
-      index: 3
+      index: 2
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -881,7 +767,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Tilemap Focus
-      index: 2
+      index: 3
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -935,15 +821,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    m_Target: {x: 1.1244943, y: 2.99342, z: 714.835}
+    m_Target: {x: -0.11080768, y: -1.6262842, z: 319.72916}
     speed: 2
-    m_Value: {x: 1.1244943, y: 2.99342, z: 714.835}
-=======
-    m_Target: {x: 0.10078214, y: 0.08092411, z: 7474.319}
-    speed: 2
-    m_Value: {x: 0.10078214, y: 0.08092411, z: 7474.319}
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+    m_Value: {x: -0.11080768, y: -1.6262842, z: 319.72916}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -993,15 +873,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    m_Target: 1.2673075
+    m_Target: 4.2259235
     speed: 2
-    m_Value: 1.2673075
-=======
-    m_Target: 2.9186575
-    speed: 2
-    m_Value: 2.9186575
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+    m_Value: 4.2259235
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1046,17 +920,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
     x: 1240
     y: 515.2
     width: 294.2
     height: 259.4
-=======
-    x: 672
-    y: 619.2
-    width: 367.00006
-    height: 149
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1071,14 +938,14 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: 4787675142356045916, guid: 43f6c496f737ea64b9c928ee78e8b4a0, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.8727737
+    - e00: 1
       e01: 0
       e02: 0
-      e03: -33.451996
+      e03: 0
       e10: 0
-      e11: 0.8727737
+      e11: 1
       e12: 0
-      e13: 4.5603867
+      e13: 0
       e20: 0
       e21: 0
       e22: 1
@@ -1123,17 +990,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    x: 979.2
+    x: 996
     y: 80.8
-    width: 257.2
-    height: 363
-=======
-    x: 307.2
-    y: 80.8
-    width: 362.8
-    height: 361.4
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+    width: 238.80002
+    height: 363.8
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1147,15 +1007,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-      m_SelectedIDs: 74b8feff
-      m_LastClickedID: -83852
-      m_ExpandedIDs: fa87ffff4ca7ffff0ae0ffff3ae3ffff7ee4ffff5ee5ffff1ce8ffff5ef1ffff6ef1ffff02f8ffff62f9ffff16fbffff686700009c670000
-=======
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1cfbffff
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+      m_ExpandedIDs: e44bfeff2e4cfefff656feff0893feff86d1feff60e4feffc8ecfeff841effff9620fffff420ffffea2dffffbc30ffffa031ffffb431ffff5a38ffff943cffff8241ffffc641ffff7a4cffff0060ffff4460ffff066bffffa875ffff4081ffff8481ffff188cffff328cfffff490ffff3891ffffe89bffff029cffffc2a2ffff06a3ffffacadffffc2adffff88c2ffffa0c2fffff6c2ffff08cbffff4ecbffffe6ccffff1cd6ffff36d6ffff60d7ffff16fbffff00630000b6630000f4640000d2750000f4750000ba890000c09500003a9b000062ae0000aeaf0000f8b3000078d8000054dc00007add0000d0dd00009ee000000e5e0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1199,17 +1053,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    x: 979.2
-    y: 464.80002
-    width: 257.2
-    height: 309.8
-=======
-    x: 307.2
-    y: 463.2
-    width: 362.8
-    height: 305.00003
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+    x: 996
+    y: 465.6
+    width: 238.80002
+    height: 309
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1231,39 +1078,24 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    - Assets/script/Money/Calender
-=======
-    - Assets/Scenes
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+    - Assets/Prefeb/Calender
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
-  m_StartGridSize: 16
+  m_StartGridSize: 32
   m_LastFolders:
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-  - Assets/script/Money/Calender
-=======
-  - Assets/Scenes
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
-  m_LastFoldersGridSize: 16
-  m_LastProjectPath: "D:\\\u8A60\u7D5C\\GitHub\\Money_APP_git"
+  - Assets/Prefeb/Calender
+  m_LastFoldersGridSize: 32
+  m_LastProjectPath: C:\Users\cjo6a\gitt\Money_git
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    scrollPos: {x: 0, y: 14.200012}
-    m_SelectedIDs: 44680000
-    m_LastClickedID: 26692
-    m_ExpandedIDs: 000000001862000030620000f2640000ac670000e467000000ca9a3b
-=======
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 20620000
-    m_LastClickedID: 25120
-    m_ExpandedIDs: 000000001e62000000ca9a3b
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: acfa0000
+    m_LastClickedID: 64172
+    m_ExpandedIDs: 0000000094660000aa660000ae660000b4660000d889000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1291,11 +1123,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    m_ExpandedIDs: 0000000018620000
-=======
-    m_ExpandedIDs: 00000000
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
+    m_ExpandedIDs: 0000000094660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1322,12 +1150,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
     m_HadKeyboardFocusLastEvent: 1
-=======
-    m_HadKeyboardFocusLastEvent: 0
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
-    m_ExpandedInstanceIDs: c6230000eaa4000006770000386d0000646f0000f0cb0000506f000000150100746f0000426d0000626e01005c6f01002e6e010090700000c06e00001ef70000be0b0100f46f0000147000004870000058700000ceda00001a36010026360100505501006a9001001c7f000000000000ea6f00001c700000e48703004270000012b80100767900008e710000a47f00002e7000003670000030610000
+    m_ExpandedInstanceIDs: c6230000eaa4000006770000386d0000646f0000f0cb0000506f000000150100746f0000426d0000626e01005c6f01002e6e010090700000c06e00001ef70000be0b0100f46f0000147000004870000058700000ceda00001a36010026360100505501006a9001001c7f0000ea6f00001c700000e48703004270000012b80100767900008e710000a47f00002e700000367000003061000000000000fa650000ec660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1352,7 +1176,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 16
+    m_GridSize: 32
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 50
 --- !u!114 &19
@@ -1375,17 +1199,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD:MONEY/UserSettings/Layouts/default-2022.dwlt
-    x: 1238.4
+    x: 1236.8
     y: 80.8
-    width: 295.8
+    width: 291
     height: 412.6
-=======
-    x: 672
-    y: 80.8
-    width: 367.00006
-    height: 517.4
->>>>>>> 4ea85a20c6940a872711d2be0f0207322dcf0fbe:UserSettings/Layouts/default-2022.dwlt
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1403,7 +1220,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 432
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -1429,9 +1246,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1238.4
+    x: 1236.8
     y: 514.4
-    width: 295.8
+    width: 291
     height: 260.19998
   m_SerializedDataModeController:
     m_DataMode: 0

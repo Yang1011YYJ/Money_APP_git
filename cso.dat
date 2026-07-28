@@ -29,3 +29,7 @@ V1
 2:child,L
 2:LoadFromFile,aC
 2:OpenEditor,H
+2:WaitAndAction,oJ
+2:time,a43
+2:a,iJ
+2:OpenAddRecordPanel,m7

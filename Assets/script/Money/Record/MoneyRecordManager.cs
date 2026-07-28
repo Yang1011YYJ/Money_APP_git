@@ -10,10 +10,13 @@ public class MoneyRecordManager : MonoBehaviour
 {
     [Header("輸入介面")]
     [Tooltip("輸入金額的欄位")] public TMP_InputField amountInput;
-    [Tooltip("分類的下拉清單")] public TMP_Dropdown categoryDropdown;
+    //[Tooltip("分類的下拉清單")] public TMP_Dropdown categoryDropdown;
+    //[Tooltip("顯示帳目即將要儲存的日期")]public 
+    [Tooltip("整個新增帳目面板")] public  GameObject AddRecordPanel;
 
     [Header("腳本")]
     public CalenderControll calenderControllScript;
+    public CategoryDropdownManager categoryDropdownManager;
 
     [Header("目前帳目類型")]
     [Tooltip("目前選擇的是支出還是收入")][SerializeField]RecordType currentRecoedType = RecordType.Expense;
@@ -199,6 +202,115 @@ public class MoneyRecordManager : MonoBehaviour
         RefreshDailyRecords();
     }
 
+    // 提供 Unity UI 的儲存按鈕直接呼叫。
+    // 這個方法負責從目前的手動輸入介面建立一筆帳目。
+    public void AddRecord()
+    {
+        // 檢查金額輸入欄位是否存在。
+        if (amountInput == null)
+        {
+            // 顯示錯誤訊息。
+            Debug.LogError(
+                "MoneyRecordManager 的 Amount Input 尚未連接。");
+
+            // 中止新增。
+            return;
+        }
+
+        // 嘗試將使用者輸入的文字轉換成整數金額。
+        bool amountSuccess =
+            int.TryParse(
+                amountInput.text,
+                out int amount);
+
+        // 判斷金額是否有效。
+        if (!amountSuccess || amount <= 0)
+        {
+            // 顯示提示。
+            Debug.LogWarning(
+                "請輸入大於 0 的有效金額。");
+
+            // 中止新增。
+            return;
+        }
+
+        // 檢查日曆控制器是否存在。
+        if (calenderControllScript == null)
+        {
+            // 顯示錯誤訊息。
+            Debug.LogError(
+                "MoneyRecordManager 的 Calender Controll 尚未連接。");
+
+            // 中止新增。
+            return;
+        }
+
+        // 檢查分類管理器是否存在。
+        if (categoryDropdownManager == null)
+        {
+            // 顯示錯誤訊息。
+            Debug.LogError(
+                "MoneyRecordManager 的 Category Dropdown Manager 尚未連接。");
+
+            // 中止新增。
+            return;
+        }
+
+        // 取得目前日曆選取的日期。
+        DateTime selectedDate =
+            calenderControllScript.GetSelectedDate();
+
+        // 建立新的帳目資料。
+        MoneyRecord newRecord =
+            new MoneyRecord();
+
+        // 建立這筆資料的唯一編號。
+        newRecord.id =
+            Guid.NewGuid().ToString();
+
+        // 儲存目前選取日期。
+        newRecord.date =
+            selectedDate.ToString("yyyy-MM-dd");
+
+        // 儲存輸入金額。
+        newRecord.amount =
+            amount;
+
+        // 取得並儲存目前選取的大分類。
+        newRecord.category =
+            categoryDropdownManager.GetCategory();
+
+        // 取得並儲存目前選取的小分類。
+        newRecord.subCategory =
+            categoryDropdownManager.GetSubCategory();
+
+        // 儲存目前選擇的收入或支出。
+        newRecord.recordType =
+            currentRecoedType;
+
+        // 目前手動輸入沒有另外輸入品項，
+        // 所以暫時把小分類當作品項。
+        newRecord.itemName =
+            newRecord.subCategory;
+
+        // 目前手動介面還沒有付款方式，
+        // 暫時預設為現金。
+        newRecord.paymentMethod =
+            "現金";
+
+        // 目前手動介面沒有備註輸入，
+        // 所以先使用空字串。
+        newRecord.note =
+            "";
+
+        // 呼叫原本已有的 AddRecord(MoneyRecord)，
+        // 讓它統一負責加入清單、存檔和刷新畫面。
+        AddRecord(newRecord);
+
+        // 新增完成後清空金額輸入框。
+        amountInput.text = "";
+    }
+
     // 提供其他腳本取得全部帳目。
     public List<MoneyRecord> GetAllRecords()
     {
@@ -284,5 +396,17 @@ public class MoneyRecordManager : MonoBehaviour
             //將帳目資料傳給recordItem顯示
             recordItem.SetUP(record,editRecordPanel);
         }
+    }
+
+    //開啟新增帳目面板
+    public  void OpenAddRecordPanel()
+    {
+        AddRecordPanel.SetActive(true);
+    }
+
+    //關閉新增帳目面板
+    public  void CloseAddRecordPanel()
+    {
+        AddRecordPanel.SetActive(false);
     }
 }

@@ -9,6 +9,8 @@ public class MoneyRecordItem : MonoBehaviour
     [Header("UI")]
     [Tooltip("顯示收入或支出")] public TextMeshProUGUI typeText;
     [Tooltip("顯示帳目分類")] public TextMeshProUGUI categoryText;
+    // 顯示小分類。
+    [Tooltip("顯示帳目小分類")] public TextMeshProUGUI subCategoryText;
     [Tooltip("顯示帳目金額")] public TextMeshProUGUI amountText;
     [Tooltip("編輯按鈕")] public Button editButton;
 
@@ -38,8 +40,11 @@ public class MoneyRecordItem : MonoBehaviour
         //將帳目的分類顯示在分類文字中
         categoryText.text = record.category;
 
+        // 顯示這筆帳目的小分類。
+        subCategoryText.text = record.subCategory;
+
         //判斷資料是否為支出
-        if(record.recordType == RecordType.Expense)
+        if (record.recordType == RecordType.Expense)
         {
             //顯示帳目類型為支出
             typeText.text = "支出";
