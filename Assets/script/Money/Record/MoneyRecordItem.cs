@@ -11,6 +11,7 @@ public class MoneyRecordItem : MonoBehaviour
     [Tooltip("顯示帳目分類")] public TextMeshProUGUI categoryText;
     // 顯示小分類。
     [Tooltip("顯示帳目小分類")] public TextMeshProUGUI subCategoryText;
+    [Tooltip("顯示付款方式")] public TextMeshProUGUI paymentMethodText;
     [Tooltip("顯示帳目金額")] public TextMeshProUGUI amountText;
     [Tooltip("編輯按鈕")] public Button editButton;
 
@@ -63,6 +64,9 @@ public class MoneyRecordItem : MonoBehaviour
 
             amountText.color = incomeColor;
         }
+
+        //顯示這筆帳目的付款/收款方式
+        paymentMethodText.text = record.paymentMethod;
 
         // 檢查目前這個帳目項目的編輯按鈕是否存在。
         if (editButton == null)

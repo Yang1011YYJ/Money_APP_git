@@ -296,7 +296,7 @@ TextureImporter:
         width: 90
         height: 87
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -304,6 +304,27 @@ TextureImporter:
       bones: []
       spriteID: e927fe1b9935fe242b17294cce887ccc
       internalID: 771347137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "UI - \u8907\u88FD_4"
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 255
+        width: 61
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0a12dc54774b942b83178fa9bfe383
+      internalID: -2098205149
       vertices: []
       indices: 
       edges: []
@@ -325,6 +346,7 @@ TextureImporter:
       "UI - \u8907\u88FD_1": -517358125
       "UI - \u8907\u88FD_2": 1946009927
       "UI - \u8907\u88FD_3": 771347137
+      "UI - \u8907\u88FD_4": -2098205149
       plus: 1064122520
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

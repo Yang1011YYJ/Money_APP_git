@@ -129,6 +129,21 @@ public class MoneyRecordManager : MonoBehaviour
             {
                 //將讀取到的帳目保存到目前使用中的清單
                 moneyRecords = loadedRecords;
+
+                // 修補舊版本資料。
+                bool repaired =
+                    RepairOldRecordData();
+
+                // 如果真的有修補到舊資料。
+                if (repaired)
+                {
+                    // 將補完的新格式重新存回檔案。
+                    SaveToFile();
+
+                    // 顯示修補完成訊息。
+                    Debug.Log(
+                        "偵測到舊版本帳目資料，已自動補上缺少欄位。");
+                }
             }
 
             //顯示
@@ -396,6 +411,94 @@ public class MoneyRecordManager : MonoBehaviour
             //將帳目資料傳給recordItem顯示
             recordItem.SetUP(record,editRecordPanel);
         }
+    }
+
+    // 修補舊版本資料，並回傳是否有發生修改。
+    // 舊 JSON 沒有新欄位時，Newtonsoft 會將 string 設為 null。
+    // 這裡統一補上預設值，避免 UI 顯示空白。
+    private bool RepairOldRecordData()
+    {
+        // 預設沒有修改任何資料。
+        bool hasChanged =
+            false;
+
+        // 逐一檢查所有帳目資料。
+        for (int i = 0; i < moneyRecords.Count; i++)
+        {
+            // 取得目前正在檢查的帳目。
+            MoneyRecord record =
+                moneyRecords[i];
+
+            // 如果這筆帳目本身是空的，就跳過。
+            if (record == null)
+            {
+                // 繼續下一筆。
+                continue;
+            }
+
+            // 如果大分類沒有資料，就設定為其他。
+            if (string.IsNullOrWhiteSpace(record.category))
+            {
+                // 補上大分類預設值。
+                record.category =
+                    "其他";
+
+                // 紀錄資料有被修改。
+                hasChanged =
+                    true;
+            }
+
+            // 如果小分類沒有資料，就設定為其他。
+            if (string.IsNullOrWhiteSpace(record.subCategory))
+            {
+                // 補上小分類預設值。
+                record.subCategory =
+                    "其他";
+
+                // 紀錄資料有被修改。
+                hasChanged =
+                    true;
+            }
+
+            // 如果品項沒有資料，就設定為其他。
+            if (string.IsNullOrWhiteSpace(record.itemName))
+            {
+                // 補上品項預設值。
+                record.itemName =
+                    "其他";
+
+                // 紀錄資料有被修改。
+                hasChanged =
+                    true;
+            }
+
+            // 如果付款方式沒有資料，就設定為現金*。
+            if (string.IsNullOrWhiteSpace(record.paymentMethod))
+            {
+                // 補上付款方式預設值。
+                record.paymentMethod =
+                    "現金*";
+
+                // 紀錄資料有被修改。
+                hasChanged =
+                    true;
+            }
+
+            // 如果備註沒有資料，就設定為空白。
+            if (string.IsNullOrWhiteSpace(record.note))
+            {
+                // 補上備註預設值。
+                record.note =
+                    "";
+
+                // 紀錄資料有被修改。
+                hasChanged =
+                    true;
+            }
+        }
+
+        // 回傳這次是否修補過資料。
+        return hasChanged;
     }
 
     //開啟新增帳目面板
