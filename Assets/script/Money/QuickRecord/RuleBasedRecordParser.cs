@@ -463,7 +463,7 @@ public class RuleBasedRecordParser
         }
 
         // 找不到付款方式時回傳現金。
-        return "現金";
+        return "未指定";
     }
 
     // 根據句子中的關鍵字推測分類。

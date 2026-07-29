@@ -5,6 +5,19 @@ using TMPro;
 using UnityEngine;
 
 // 建立快速記帳輸入介面控制器。
+
+// 定義解析結果目前應該進入哪一個區域。
+public enum ParseRecordStatus
+{
+    // 所有必要資料完整，可以等待直接儲存。
+    Ready,
+
+    // 帳目可以成立，但部分欄位需要人工確認。
+    NeedReview,
+
+    // 解析結果不足以建立帳目。
+    Failed
+}
 public class QuickRecordInputController : MonoBehaviour
 {
     // ==============================
@@ -34,6 +47,18 @@ public class QuickRecordInputController : MonoBehaviour
     // 儲存最近一次解析成功的結果。
     private RecordParseResult latestResult;
 
+    [Header("分析結果顯示區")]
+    // 分析完整的結果要放的位置。
+    [Tooltip("分析完整，可以直接儲存的區域")]public Transform readyContent;
+    // 有不確定欄位的結果要放的位置。
+    [Tooltip("需要人工確認的區域")]public Transform reviewContent;
+    // 分析失敗的結果要放的位置。
+    [Tooltip("分析失敗的區域")]public Transform failedContent;
+    // 成功解析結果使用的 Prefab。
+    [Tooltip("分析結果成功 Prefab")]public GameObject parsedRecordItemPrefab;
+    // 失敗解析結果使用的 Prefab。
+    [Tooltip("分析結果失敗 Prefab")] public GameObject parsedErrorRecordItemPrefab;
+
     // ==============================
     // 其他腳本
     // ==============================
@@ -51,6 +76,7 @@ public class QuickRecordInputController : MonoBehaviour
     // 分析文字
     // ==============================
     // 提供解析按鈕呼叫。
+    // 提供分析按鈕呼叫。
     public void ParseInput()
     {
         // 檢查輸入欄位是否存在。
@@ -64,22 +90,34 @@ public class QuickRecordInputController : MonoBehaviour
             return;
         }
 
+        // 保存這次輸入的原始文字。
+        string originalSentence =
+            sentenceInput.text;
+
         // 將輸入文字傳給規則解析器。
         latestResult =
-            parser.Parse(sentenceInput.text);
+            parser.Parse(
+                originalSentence);
+
 
         // 判斷解析是否失敗。
         if (!latestResult.isSuccess)
         {
-            // 顯示解析失敗原因。
+            // 原本的文字區仍然顯示失敗原因。
             parseResultText.text =
                 latestResult.message;
 
-            // 中止結果顯示。
+            // 將失敗結果放進第三區。
+            CreateFailedResult(
+                latestResult,
+                originalSentence);
+
+            // 分析失敗，不繼續建立正常帳目卡片。
             return;
         }
 
-        // 將解析結果顯示在畫面上。
+
+        // 保留你原本的分析結果文字顯示。
         parseResultText.text =
             $"日期：{latestResult.date:yyyy-MM-dd}\n" +
             $"品項：{latestResult.itemName}\n" +
@@ -88,6 +126,32 @@ public class QuickRecordInputController : MonoBehaviour
             $"分類：{latestResult.category}\n" +
             $"備註：{latestResult.note}\n" +
             $"類型：{GetRecordTypeText(latestResult.recordType)}";
+
+
+        // 判斷這筆資料是否需要人工確認。
+        bool needReview =
+            NeedsReview(
+                latestResult);
+
+
+        // 如果需要人工確認。
+        if (needReview)
+        {
+            // 將分析結果產生在第二區。
+            CreateParsedRecordItem(
+                latestResult,
+                originalSentence,
+                reviewContent);
+        }
+        else
+        {
+            // 資料完整時產生在第一區。
+            CreateParsedRecordItem(
+                latestResult,
+                originalSentence,
+                readyContent);
+        }
+
 
         // 在 Console 顯示成功結果。
         Debug.Log(
@@ -99,6 +163,170 @@ public class QuickRecordInputController : MonoBehaviour
             $"分類={latestResult.category}");
     }
 
+    // 判斷一筆成功分析的資料是否需要人工確認。
+    private bool NeedsReview(
+        RecordParseResult result)
+    {
+        // 沒有大分類時需要確認。
+        if (string.IsNullOrWhiteSpace(result.category))
+        {
+            // 回傳需要確認。
+            return true;
+        }
+
+        // 大分類為其他時需要確認。
+        if (result.category == "其他")
+        {
+            // 回傳需要確認。
+            return true;
+        }
+
+        // 目前 itemName 暫時就是小分類，
+        // 沒有小分類時需要確認。
+        if (string.IsNullOrWhiteSpace(result.itemName))
+        {
+            // 回傳需要確認。
+            return true;
+        }
+
+        // 小分類為其他時需要確認。
+        if (result.itemName == "其他")
+        {
+            // 回傳需要確認。
+            return true;
+        }
+
+        // 付款方式完全沒有資料時需要確認。
+        if (string.IsNullOrWhiteSpace(result.paymentMethod))
+        {
+            // 回傳需要確認。
+            return true;
+        }
+
+        // 付款方式為未指定或其他時需要確認。
+        if (
+            result.paymentMethod == "未指定" ||
+            result.paymentMethod == "其他")
+        {
+            // 回傳需要確認。
+            return true;
+        }
+
+        // 備註沒有資料沒關係，
+        // 所以前面都正常就不需要人工確認。
+        return false;
+    }
+
+    // 在指定顯示區建立一張分析結果卡片。
+    private void CreateParsedRecordItem(
+        RecordParseResult result,
+        string originalSentence,
+        Transform targetContent)
+    {
+        // 檢查 Prefab 是否存在。
+        if (parsedRecordItemPrefab == null)
+        {
+            // 顯示錯誤。
+            Debug.LogError(
+                "QuickRecordInputController 沒有連接 Parsed Record Item Prefab。");
+
+            // 中止建立。
+            return;
+        }
+
+        // 檢查 Prefab 是否存在。
+        if (parsedErrorRecordItemPrefab == null)
+        {
+            // 顯示錯誤。
+            Debug.LogError(
+                "QuickRecordInputController 沒有連接 Parsed Record Item Prefab。");
+
+            // 中止建立。
+            return;
+        }
+
+        // 檢查目標區域是否存在。
+        if (targetContent == null)
+        {
+            // 顯示錯誤。
+            Debug.LogError(
+                "QuickRecordInputController 的分析結果 Content 沒有連接。");
+
+            // 中止建立。
+            return;
+        }
+
+        // 在指定 Content 底下建立 Prefab。
+        GameObject itemObject =
+            Instantiate(
+                parsedRecordItemPrefab,
+                targetContent);
+
+        // 取得 Prefab 上的 ParsedRecordItem 腳本。
+        ParsedRecordItem item =
+            itemObject.GetComponent<ParsedRecordItem>();
+
+        // 檢查腳本是否存在。
+        if (item == null)
+        {
+            // 顯示錯誤。
+            Debug.LogError(
+                "ParsedRecordItem Prefab 沒有掛 ParsedRecordItem 腳本。");
+
+            // 刪掉錯誤建立的物件。
+            Destroy(itemObject);
+
+            // 中止設定。
+            return;
+        }
+
+        // 將分析結果、原始文字與帳目管理器傳給卡片。
+        item.Setup(
+            result,
+            originalSentence,
+            moneyRecordManager);
+    }
+
+    // 將分析失敗的內容顯示在第三區。
+    private void CreateFailedResult(
+        RecordParseResult result,
+        string originalSentence)
+    {
+        // 檢查失敗區是否存在。
+        if (failedContent == null)
+        {
+            // 顯示錯誤。
+            Debug.LogError(
+                "QuickRecordInputController 沒有連接 Failed Content。");
+
+            // 中止建立。
+            return;
+        }
+
+        // 建立一個新的 UI 空物件。
+        GameObject failedObject =
+            new GameObject(
+                "FailedRecordItem");
+
+        // 將物件放到失敗區下面。
+        failedObject.transform.SetParent(
+            failedContent,
+            false);
+
+        // 加入 RectTransform，
+        // 讓這個物件可以存在於 UI 中。
+        RectTransform rectTransform =
+            failedObject.AddComponent<RectTransform>();
+
+        // 加入 TextMeshProUGUI 元件。
+        TextMeshProUGUI text =
+            failedObject.AddComponent<TextMeshProUGUI>();
+
+        // 顯示失敗原因與原始文字。
+        text.text =
+            $"分析失敗：{result.message}\n" +
+            $"原文：{originalSentence}";
+    }
     // ==============================
     // 儲存分析結果
     // ==============================
@@ -193,6 +421,70 @@ public class QuickRecordInputController : MonoBehaviour
 
         // 其他情況回傳支出。
         return "支出";
+    }
+
+    // 根據解析結果判斷這筆資料要放在哪一區。
+    private ParseRecordStatus GetParseStatus(
+        RecordParseResult result)
+    {
+        // 沒有解析結果時視為失敗。
+        if (result == null)
+        {
+            // 放入分析失敗區。
+            return ParseRecordStatus.Failed;
+        }
+
+        // 解析器已經判斷失敗時，
+        // 直接放入分析失敗區。
+        if (!result.isSuccess)
+        {
+            // 回傳失敗。
+            return ParseRecordStatus.Failed;
+        }
+
+        // 金額不存在時，
+        // 已經不足以建立有效帳目。
+        if (result.amount <= 0)
+        {
+            // 回傳失敗。
+            return ParseRecordStatus.Failed;
+        }
+
+        // 大分類為空白或其他，
+        // 代表系統無法確定分類。
+        if (
+            string.IsNullOrWhiteSpace(result.category) ||
+            result.category == "其他")
+        {
+            // 放入需要人工確認區。
+            return ParseRecordStatus.NeedReview;
+        }
+
+        // 品項目前暫時代表小分類。
+        // 如果沒有辨識到，或只有其他，
+        // 代表需要人工確認。
+        if (
+            string.IsNullOrWhiteSpace(result.itemName) ||
+            result.itemName == "其他")
+        {
+            // 放入需要人工確認區。
+            return ParseRecordStatus.NeedReview;
+        }
+
+        // 付款方式沒有判斷出來時，
+        // 也先交由人工確認。
+        if (
+            string.IsNullOrWhiteSpace(result.paymentMethod) ||
+            result.paymentMethod == "未指定" ||
+            result.paymentMethod == "其他")
+        {
+            // 放入需要人工確認區。
+            return ParseRecordStatus.NeedReview;
+        }
+
+        // 前面的條件都沒有發生，
+        // 代表必要資訊完整。
+        return ParseRecordStatus.Ready;
     }
 
     //開關

@@ -3,44 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\cjo6a\\gitt\\Money_git\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\record\\moneyrecorditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\record\\moneyrecorditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|c:\\users\\cjo6a\\gitt\\money_git\\assets\\script\\money\\voice\\voiceinputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\voice\\voiceinputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|c:\\users\\cjo6a\\gitt\\money_git\\assets\\script\\money\\record\\moneyrecordmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\record\\moneyrecordmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\record\\categorydropdownmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\record\\categorydropdownmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\quickrecord\\rulebasedrecordparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\quickrecord\\rulebasedrecordparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|c:\\users\\cjo6a\\gitt\\money_git\\assets\\script\\money\\quickrecord\\parsedrecorditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\quickrecord\\parsedrecorditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\quickrecord\\quickrecordinputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\quickrecord\\quickrecordinputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\quickrecord\\rulebasedrecordparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\quickrecord\\rulebasedrecordparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\quickrecord\\recordparseresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\quickrecord\\recordparseresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\record\\moneyrecordeditpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\record\\moneyrecordeditpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\calender\\holidaymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\calender\\holidaymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\record\\moneyrecordmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\record\\moneyrecordmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\record\\moneyrecorditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\record\\moneyrecorditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\record\\categorydropdownmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\record\\categorydropdownmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\record\\moneyrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\record\\moneyrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\randomsave\\reditmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\randomsave\\reditmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\randomsave\\random365.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\randomsave\\random365.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\calender\\holidaymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\calender\\holidaymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\calender\\calendercontroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\nextscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\nextscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|C:\\Users\\cjo6a\\gitt\\Money_git\\assets\\script\\money\\quickrecord\\recordparseresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46A67DAA-D6CE-CC6F-12D5-C0A5B34FCDAA}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\money\\quickrecord\\recordparseresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -75,32 +79,104 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MoneyRecordItem.cs",
-              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecordItem.cs",
-              "RelativeDocumentMoniker": "Assets\\script\\Money\\Record\\MoneyRecordItem.cs",
-              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecordItem.cs",
-              "RelativeToolTip": "Assets\\script\\Money\\Record\\MoneyRecordItem.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAQwAYAAAAsAAAAAAAAAA==",
+              "Title": "VoiceInputController.cs",
+              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Voice\\VoiceInputController.cs",
+              "RelativeDocumentMoniker": "Assets\\script\\Money\\Voice\\VoiceInputController.cs",
+              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Voice\\VoiceInputController.cs",
+              "RelativeToolTip": "Assets\\script\\Money\\Voice\\VoiceInputController.cs",
+              "ViewState": "AgIAALMBAAAAAAAAAADwv7cBAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-24T09:15:27.713Z",
+              "WhenOpened": "2026-07-29T08:40:36.594Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MoneyRecordManager.cs",
-              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecordManager.cs",
-              "RelativeDocumentMoniker": "Assets\\script\\Money\\Record\\MoneyRecordManager.cs",
-              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecordManager.cs",
-              "RelativeToolTip": "Assets\\script\\Money\\Record\\MoneyRecordManager.cs",
-              "ViewState": "AgIAAJcBAAAAAAAAAAAxwJcBAAALAAAAAAAAAA==",
+              "Title": "ParsedRecordItem.cs",
+              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\ParsedRecordItem.cs",
+              "RelativeDocumentMoniker": "Assets\\script\\Money\\QuickRecord\\ParsedRecordItem.cs",
+              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\ParsedRecordItem.cs",
+              "RelativeToolTip": "Assets\\script\\Money\\QuickRecord\\ParsedRecordItem.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAQwGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-24T05:51:04.796Z",
+              "WhenOpened": "2026-07-29T06:11:44.101Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HolidayManager.cs",
+              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Calender\\HolidayManager.cs",
+              "RelativeDocumentMoniker": "Assets\\script\\Money\\Calender\\HolidayManager.cs",
+              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Calender\\HolidayManager.cs",
+              "RelativeToolTip": "Assets\\script\\Money\\Calender\\HolidayManager.cs",
+              "ViewState": "AgIAAPYAAAAAAAAAAAAYwAkBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T15:02:32.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MoneyRecordEditPanel.cs",
+              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecordEditPanel.cs",
+              "RelativeDocumentMoniker": "Assets\\script\\Money\\Record\\MoneyRecordEditPanel.cs",
+              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecordEditPanel.cs",
+              "RelativeToolTip": "Assets\\script\\Money\\Record\\MoneyRecordEditPanel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T08:29:23.154Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "QuickRecordInputController.cs",
+              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\QuickRecordInputController.cs",
+              "RelativeDocumentMoniker": "Assets\\script\\Money\\QuickRecord\\QuickRecordInputController.cs",
+              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\QuickRecordInputController.cs",
+              "RelativeToolTip": "Assets\\script\\Money\\QuickRecord\\QuickRecordInputController.cs",
+              "ViewState": "AgIAACsBAAAAAAAAAAAAAEgBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T11:10:46.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RecordParseResult.cs",
+              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\RecordParseResult.cs",
+              "RelativeDocumentMoniker": "Assets\\script\\Money\\QuickRecord\\RecordParseResult.cs",
+              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\RecordParseResult.cs",
+              "RelativeToolTip": "Assets\\script\\Money\\QuickRecord\\RecordParseResult.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwCAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T15:21:04.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RuleBasedRecordParser.cs",
+              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\RuleBasedRecordParser.cs",
+              "RelativeDocumentMoniker": "Assets\\script\\Money\\QuickRecord\\RuleBasedRecordParser.cs",
+              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\RuleBasedRecordParser.cs",
+              "RelativeToolTip": "Assets\\script\\Money\\QuickRecord\\RuleBasedRecordParser.cs",
+              "ViewState": "AgIAAL0BAAAAAAAAAAAgwNEBAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T15:22:42.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MoneyRecordItem.cs",
+              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecordItem.cs",
+              "RelativeDocumentMoniker": "Assets\\script\\Money\\Record\\MoneyRecordItem.cs",
+              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecordItem.cs",
+              "RelativeToolTip": "Assets\\script\\Money\\Record\\MoneyRecordItem.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAQwA0AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T09:15:27.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "CategoryDropdownManager.cs",
               "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\CategoryDropdownManager.cs",
               "RelativeDocumentMoniker": "Assets\\script\\Money\\Record\\CategoryDropdownManager.cs",
@@ -112,43 +188,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RuleBasedRecordParser.cs",
-              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\RuleBasedRecordParser.cs",
-              "RelativeDocumentMoniker": "Assets\\script\\Money\\QuickRecord\\RuleBasedRecordParser.cs",
-              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\RuleBasedRecordParser.cs",
-              "RelativeToolTip": "Assets\\script\\Money\\QuickRecord\\RuleBasedRecordParser.cs",
-              "ViewState": "AgIAAGAEAAAAAAAAAAAqwMIFAAABAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "MoneyRecordManager.cs",
+              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecordManager.cs",
+              "RelativeDocumentMoniker": "Assets\\script\\Money\\Record\\MoneyRecordManager.cs",
+              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecordManager.cs",
+              "RelativeToolTip": "Assets\\script\\Money\\Record\\MoneyRecordManager.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAmwJEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T15:22:42.634Z"
+              "WhenOpened": "2026-07-24T05:51:04.796Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "QuickRecordInputController.cs",
-              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\QuickRecordInputController.cs",
-              "RelativeDocumentMoniker": "Assets\\script\\Money\\QuickRecord\\QuickRecordInputController.cs",
-              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\QuickRecordInputController.cs",
-              "RelativeToolTip": "Assets\\script\\Money\\QuickRecord\\QuickRecordInputController.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAYwF8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T11:10:46.497Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MoneyRecordEditPanel.cs",
-              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecordEditPanel.cs",
-              "RelativeDocumentMoniker": "Assets\\script\\Money\\Record\\MoneyRecordEditPanel.cs",
-              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecordEditPanel.cs",
-              "RelativeToolTip": "Assets\\script\\Money\\Record\\MoneyRecordEditPanel.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAmwJUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-24T08:29:23.154Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "MoneyRecord.cs",
               "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Record\\MoneyRecord.cs",
               "RelativeDocumentMoniker": "Assets\\script\\Money\\Record\\MoneyRecord.cs",
@@ -160,19 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "REditManager.cs",
-              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\RandomSave\\REditManager.cs",
-              "RelativeDocumentMoniker": "Assets\\script\\RandomSave\\REditManager.cs",
-              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\RandomSave\\REditManager.cs",
-              "RelativeToolTip": "Assets\\script\\RandomSave\\REditManager.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAF0AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-27T15:02:36.387Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Random365.cs",
               "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\RandomSave\\Random365.cs",
               "RelativeDocumentMoniker": "Assets\\script\\RandomSave\\Random365.cs",
@@ -184,19 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HolidayManager.cs",
-              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Calender\\HolidayManager.cs",
-              "RelativeDocumentMoniker": "Assets\\script\\Money\\Calender\\HolidayManager.cs",
-              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Calender\\HolidayManager.cs",
-              "RelativeToolTip": "Assets\\script\\Money\\Calender\\HolidayManager.cs",
-              "ViewState": "AgIAALcAAAAAAAAAAAAvwNAAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-27T15:02:32.437Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "CalenderControll.cs",
               "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Calender\\CalenderControll.cs",
               "RelativeDocumentMoniker": "Assets\\script\\Money\\Calender\\CalenderControll.cs",
@@ -208,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "ParsedItemNote.cs",
               "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\ParsedItemNote.cs",
               "RelativeDocumentMoniker": "Assets\\script\\Money\\QuickRecord\\ParsedItemNote.cs",
@@ -220,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "CalenderDayCell.cs",
               "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\Calender\\CalenderDayCell.cs",
               "RelativeDocumentMoniker": "Assets\\script\\Money\\Calender\\CalenderDayCell.cs",
@@ -232,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "NextScene.cs",
               "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\NextScene.cs",
               "RelativeDocumentMoniker": "Assets\\script\\NextScene.cs",
@@ -241,18 +269,6 @@
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-27T02:59:45.768Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "RecordParseResult.cs",
-              "DocumentMoniker": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\RecordParseResult.cs",
-              "RelativeDocumentMoniker": "Assets\\script\\Money\\QuickRecord\\RecordParseResult.cs",
-              "ToolTip": "C:\\Users\\cjo6a\\gitt\\Money_git\\Assets\\script\\Money\\QuickRecord\\RecordParseResult.cs",
-              "RelativeToolTip": "Assets\\script\\Money\\QuickRecord\\RecordParseResult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvyAAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T15:21:04.263Z"
             }
           ]
         }

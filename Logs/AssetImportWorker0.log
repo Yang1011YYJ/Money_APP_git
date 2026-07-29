@@ -1525,3 +1525,72 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 44498.268940 seconds.
+  path: Assets/UI/CalenderUI/UI.png
+  artifactKey: Guid(7519c66a2fa1bc84aa1b4fe88473171b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/CalenderUI/UI.png using Guid(7519c66a2fa1bc84aa1b4fe88473171b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa9a630a042002efd927e95d9ff01292') in 0.820747 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 57
+========================================================================
+Received Import Request.
+  Time since last request: 7.455582 seconds.
+  path: Assets/UI/CalenderUI/UI.png
+  artifactKey: Guid(7519c66a2fa1bc84aa1b4fe88473171b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/CalenderUI/UI.png using Guid(7519c66a2fa1bc84aa1b4fe88473171b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd816d1a05b29e2c74eca0732f7bab23e') in 0.235367 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 57
+========================================================================
+Received Import Request.
+  Time since last request: 157.836948 seconds.
+  path: Assets/Text/MaokenAssortedSansLite-Lite SDF.asset
+  artifactKey: Guid(13778e2f26b8c744790f18febd5ac820) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Text/MaokenAssortedSansLite-Lite SDF.asset using Guid(13778e2f26b8c744790f18febd5ac820) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38509c6cc7c8163c684a66887d5aecac') in 0.308379 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 246.037138 seconds.
+  path: Assets/UI/CalenderUI/UI - è¤‡è£½.png
+  artifactKey: Guid(5c99ff1d21c9d5b41b4aa0da875972da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/CalenderUI/UI - è¤‡è£½.png using Guid(5c99ff1d21c9d5b41b4aa0da875972da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d23d775d602db9d924e8f16d9789099') in 0.122764 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 3927.625814 seconds.
+  path: Assets/UI/CalenderUI/ChatGPT Image 2026å¹´7æœˆ29æ—¥ ä¸Šåˆ10_52_06 (1).png
+  artifactKey: Guid(13ae4552d7926ba49a7c9e160429f9b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/CalenderUI/ChatGPT Image 2026å¹´7æœˆ29æ—¥ ä¸Šåˆ10_52_06 (1).png using Guid(13ae4552d7926ba49a7c9e160429f9b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f407ec3183f345c2fc375311110f3a2f') in 0.248081 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000135 seconds.
+  path: Assets/UI/CalenderUI/ChatGPT Image 2026å¹´7æœˆ29æ—¥ ä¸Šåˆ10_52_06 (4).png
+  artifactKey: Guid(6a85dd5e04ee43d4db57bf5eb25d9692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/CalenderUI/ChatGPT Image 2026å¹´7æœˆ29æ—¥ ä¸Šåˆ10_52_06 (4).png using Guid(6a85dd5e04ee43d4db57bf5eb25d9692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8784d58f88d633b43498bb09d6aac16f') in 0.062488 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/UI/CalenderUI/UI - è¤‡è£½.png
+  artifactKey: Guid(5c99ff1d21c9d5b41b4aa0da875972da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/CalenderUI/UI - è¤‡è£½.png using Guid(5c99ff1d21c9d5b41b4aa0da875972da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '800074e7d6ee000c107f5abbd2a7cdf8') in 0.084834 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/UI/CalenderUI/ChatGPT Image 2026å¹´7æœˆ29æ—¥ ä¸Šåˆ10_52_06 (3).png
+  artifactKey: Guid(2f0a7356015a2fe4fafdd8891496c79c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/CalenderUI/ChatGPT Image 2026å¹´7æœˆ29æ—¥ ä¸Šåˆ10_52_06 (3).png using Guid(2f0a7356015a2fe4fafdd8891496c79c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b699d68889edea15ac2fc4ce1a92d83') in 0.046600 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: ¦]¬°°õ¦æºüµ²§ô©ÎÀ³¥Îµ{¦¡­n¨D¡A©Ò¥H¤w¤¤¤î I/O ¾Þ§@¡C
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
