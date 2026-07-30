@@ -6,18 +6,39 @@ using UnityEngine;
 public class MoneyRecordEditPanel : MonoBehaviour
 {
     [Header("編輯介面")]
+    [Tooltip("整個編輯面板")] public GameObject AllEditPanel;
     [Tooltip("編輯金額")] public TMP_InputField editAmountInput;
     [Tooltip("分類")] public TMP_Dropdown editCategoryDropdown;
+
+    [Header("其他UI")]
+    public GameObject QuickRecordPanel;
+
+    [Header("紀錄資料")]
+    public RecordType editingRecordType = RecordType.Expense;// 儲存目前在編輯面板選擇的收入或支出類型。
+    // 記錄目前編輯的資料是不是一筆尚未正式儲存的新帳目。
+    private bool isNewRecord = false;
+
+    // 如果新帳目成功儲存後，需要通知來源物件。
+    private System.Action onNewRecordSaved;
 
     [Header("腳本")]
     public MoneyRecordManager MoneyRecordManagerScript;
     public MoneyRecord editingRecord;// 儲存目前正在編輯的帳目。
-    public RecordType editingRecordType = RecordType.Expense;// 儲存目前在編輯面板選擇的收入或支出類型。
+
+    
 
     //開啟編輯面板並帶入指定資料
     public void OpenEditPanel(MoneyRecord record)
     {
-        if(record == null)
+        // 這是既有帳目的修改，
+        // 不是建立新資料。
+        isNewRecord = false;
+
+        // 既有帳目不需要新帳目儲存完成事件。
+        onNewRecordSaved = null;
+
+
+        if (record == null)
         {
             Debug.LogError("開啟編輯面板沒有收到資料。");
 
@@ -43,9 +64,68 @@ public class MoneyRecordEditPanel : MonoBehaviour
         editCategoryDropdown.RefreshShownValue();
 
         //開啟編輯面板
-        gameObject.SetActive(true);
+        AllEditPanel.SetActive(true);
     }
-    
+
+    // 開啟編輯面板，編輯一筆尚未正式存入帳本的新資料。
+    public void OpenNewRecordPanel(
+        MoneyRecord record,
+        System.Action onSaved)
+    {
+        // 檢查傳進來的新資料是否存在。
+        if (record == null)
+        {
+            // 顯示錯誤。
+            Debug.LogError(
+                "開啟新帳目編輯面板時沒有收到資料。");
+
+            // 中止。
+            return;
+        }
+
+        // 保存目前正在編輯的新資料。
+        editingRecord =
+            record;
+
+        // 標記這次是在建立新帳目。
+        isNewRecord =
+            true;
+
+        // 保存新帳目正式儲存完成後要執行的事件。
+        onNewRecordSaved =
+            onSaved;
+
+
+        // 將金額帶入輸入欄位。
+        editAmountInput.text =
+            record.amount > 0
+                ? record.amount.ToString()
+                : "";
+
+        // 帶入原本分析出的收入或支出。
+        editingRecordType =
+            record.recordType;
+
+
+        // 根據分析出的分類尋找 Dropdown 選項。
+        int categoryIndex =
+            FindDropdownOptionIndex(
+                editCategoryDropdown,
+                record.category);
+
+        // 將分類切換到對應選項。
+        editCategoryDropdown.value =
+            categoryIndex;
+
+        // 更新 Dropdown 顯示。
+        editCategoryDropdown.RefreshShownValue();
+
+
+        // 開啟編輯面板。
+        AllEditPanel.SetActive(
+            true);
+    }
+
     //將編輯類型切換為支出
     public void SelectExpense()
     {
@@ -59,65 +139,149 @@ public class MoneyRecordEditPanel : MonoBehaviour
     }
 
     //確認並儲存修改
+    // 確認並儲存修改。
     public void ConfirmEdit()
     {
-        if(editingRecord == null)
+        // 檢查目前是否真的有資料正在編輯。
+        if (editingRecord == null)
         {
-            Debug.LogError("目前沒有可編輯項目。");
+            // 顯示錯誤。
+            Debug.LogError(
+                "目前沒有可編輯項目。");
 
+            // 中止。
             return;
         }
 
-        //將輸入文字轉換為整體金額
-        bool amountSuccess = int.TryParse(editAmountInput.text, out int editedAmount);
 
-        //檢查金額是否有效
-        if(!amountSuccess || editedAmount <= 0)
+        // 將金額欄位轉換為整數。
+        bool amountSuccess =
+            int.TryParse(
+                editAmountInput.text,
+                out int editedAmount);
+
+        // 檢查金額是否合法。
+        if (!amountSuccess || editedAmount <= 0)
         {
-            Debug.LogWarning("請輸入大於0的金額。");
+            // 顯示提醒。
+            Debug.LogWarning(
+                "請輸入大於 0 的金額。");
 
+            // 不儲存。
             return;
         }
 
-        //取得分類的文字
-        string editedcategory = editCategoryDropdown.options[editCategoryDropdown.value].text;
 
-        //修改帳目金額
-        editingRecord.amount = editedAmount;
+        // 取得目前選擇的大分類。
+        string editedCategory =
+            editCategoryDropdown
+                .options[editCategoryDropdown.value]
+                .text;
 
-        //修改帳目分類
-        editingRecord.category = editedcategory;
 
-        //修改支出或收入
-        editingRecord.recordType = editingRecordType;
+        // 更新這筆資料的金額。
+        editingRecord.amount =
+            editedAmount;
+
+        // 更新這筆資料的大分類。
+        editingRecord.category =
+            editedCategory;
+
+        // 更新收入或支出類型。
+        editingRecord.recordType =
+            editingRecordType;
+
 
         // 檢查帳目管理器是否存在。
-        if (MoneyRecordManagerScript != null)
+        if (MoneyRecordManagerScript == null)
         {
-            //將修改的帳目資料儲存到本機
+            // 顯示錯誤。
+            Debug.LogError(
+                "MoneyRecordEditPanel 沒有連接 MoneyRecordManager。");
+
+            // 不繼續儲存。
+            return;
+        }
+
+
+        // =============================
+        // 新帳目
+        // =============================
+
+        // 判斷目前是不是從無法辨識區進來的新帳目。
+        if (isNewRecord)
+        {
+            // 使用原本已經寫好的 AddRecord，
+            // 將這筆資料正式加入帳目清單。
+            MoneyRecordManagerScript.AddRecord(
+                editingRecord);
+
+            // 如果來源有提供「成功後事件」。
+            if (onNewRecordSaved != null)
+            {
+                // 通知來源：
+                // 這筆資料現在真的已經成功存進帳本。
+                onNewRecordSaved.Invoke();
+            }
+        }
+
+        // =============================
+        // 原本已存在的帳目
+        // =============================
+
+        else
+        {
+            // 因為 editingRecord 本身就是原 List 裡的物件，
+            // 欄位前面已經直接修改完成，
+            // 所以只需要重新儲存檔案。
             MoneyRecordManagerScript.SaveToFile();
 
-            // 重新顯示目前日期的帳目清單。
+            // 重新整理目前日期的帳目顯示。
             MoneyRecordManagerScript.RefreshDailyRecords();
         }
 
-        //清除目前編輯的參考
-        editingRecord = null;
+
+        // 清除目前正在編輯的資料。
+        editingRecord =
+            null;
+
+        // 恢復成普通編輯狀態。
+        isNewRecord =
+            false;
+
+        // 清除成功事件。
+        onNewRecordSaved =
+            null;
+
+        // 儲存完成後關閉編輯面板。
+        AllEditPanel.SetActive(
+            false);
     }
 
     //關閉編輯面板
     public void ExitEditPanel()
     {
-        gameObject.SetActive(false);
+        AllEditPanel.SetActive(false);
     }
 
     //取消編輯
     public void CancelEdit()
     {
-        //清除目前編輯內容
-        editingRecord = null;
+        // 清除目前正在編輯的資料。
+        editingRecord =
+            null;
 
-        gameObject.SetActive(false);
+        // 清除是否為新帳目的狀態。
+        isNewRecord =
+            false;
+
+        // 清除新帳目儲存完成事件。
+        onNewRecordSaved =
+            null;
+
+        // 關閉編輯面板。
+        AllEditPanel.SetActive(
+            false);
     }
 
     // 根據文字尋找 TMP_Dropdown 的選項索引。

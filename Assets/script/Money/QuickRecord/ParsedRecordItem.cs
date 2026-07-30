@@ -3,6 +3,8 @@ using TMPro;
 
 // 引入 Unity 基本功能。
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 
 // 引入 Unity UI，讓程式可以使用 Button。
 using UnityEngine.UI;
@@ -47,15 +49,23 @@ public class ParsedRecordItem : MonoBehaviour
     // 儲存原始輸入文字。
     private string originalSentence;
 
+    [Header("腳本")]
+    [SerializeField] EventSystem eventSystem;
     // 儲存帳目管理器。
-    private MoneyRecordManager moneyRecordManager;
+    [SerializeField]private MoneyRecordManager moneyRecordManager;
+    [SerializeField]private MoneyRecordEditPanel moneyRecordEditPanel;
 
+    private void Awake()
+    {
+        eventSystem = EventSystem.current;
+        moneyRecordManager = eventSystem.GetComponent<MoneyRecordManager>();
+        moneyRecordEditPanel = eventSystem.GetComponent<MoneyRecordEditPanel>();
+    }
 
     // 初始化這張分析結果卡片。
     public void Setup(
         RecordParseResult result,
-        string sentence,
-        MoneyRecordManager manager)
+        string sentence)
     {
         // 保存分析結果。
         parseResult = result;
@@ -63,25 +73,9 @@ public class ParsedRecordItem : MonoBehaviour
         // 保存原始文字。
         originalSentence = sentence;
 
-        // 保存帳目管理器。
-        moneyRecordManager = manager;
-
-
         // 顯示日期。
         dateText.text =
             parseResult.date.ToString("yyyy-MM-dd");
-
-        // 判斷收入或支出。
-        if (parseResult.recordType == RecordType.Expense)
-        {
-            // 顯示支出。
-            typeText.text = "支出";
-        }
-        else
-        {
-            // 顯示收入。
-            typeText.text = "收入";
-        }
 
         // 顯示大分類。
         categoryText.text =
@@ -124,19 +118,11 @@ public class ParsedRecordItem : MonoBehaviour
         // 顯示原始輸入內容。
         originalText.text =
             $"原文：{originalSentence}";
-
-
-        // 清除按鈕原本可能存在的事件。
-        saveButton.onClick.RemoveAllListeners();
-
-        // 將儲存功能加入按鈕。
-        saveButton.onClick.AddListener(
-            SaveRecord);
     }
 
 
     // 將這張卡片的分析結果正式儲存。
-    private void SaveRecord()
+    public void SaveRecord()
     {
         // 檢查分析結果是否存在。
         if (parseResult == null)
@@ -202,6 +188,82 @@ public class ParsedRecordItem : MonoBehaviour
 
         // 儲存成功後刪掉這張等待處理的卡片。
         // 原始語音 / 輸入文字也會一起消失。
+        Destroy(gameObject);
+    }
+
+    // 開啟正式帳目的編輯面板，
+    // 讓使用者補完這筆無法辨識的資料。
+    public void EditRecord()
+    {
+        // 檢查編輯面板是否存在。
+        if (moneyRecordEditPanel == null)
+        {
+            // 顯示錯誤。
+            Debug.LogError(
+                "ParsedRecordItem 沒有連接 MoneyRecordEditPanel。");
+
+            // 中止。
+            return;
+        }
+
+
+        // 建立一筆尚未正式儲存的帳目資料。
+        MoneyRecord draftRecord =
+            new MoneyRecord();
+
+
+        // 如果有分析結果。
+        if (parseResult != null)
+        {
+            // 使用分析器目前取得的日期。
+            draftRecord.date =
+                parseResult.date.ToString(
+                    "yyyy-MM-dd");
+
+            // 使用目前分析出的金額。
+            draftRecord.amount =
+                parseResult.amount;
+
+            // 使用目前分析出的大分類。
+            draftRecord.category =
+                parseResult.category;
+
+            // 目前 itemName 暫時作為小分類。
+            draftRecord.subCategory =
+                parseResult.itemName;
+
+            // 保存目前分析出的品項。
+            draftRecord.itemName =
+                parseResult.itemName;
+
+            // 保存付款方式。
+            draftRecord.paymentMethod =
+                parseResult.paymentMethod;
+
+            // 保存備註。
+            draftRecord.note =
+                parseResult.note;
+
+            // 保存收入或支出。
+            draftRecord.recordType =
+                parseResult.recordType;
+
+            // 開啟原本已經做好的編輯面板。
+            // 這時候不刪除 FailedRecordItem。
+            moneyRecordEditPanel.OpenNewRecordPanel(
+                draftRecord,
+                OnEditSaved);
+        }
+    }
+
+    // 當使用者在編輯面板完成修改，
+    // 並且成功加入正式帳目後執行。
+    private void OnEditSaved()
+    {
+        // 正式帳目已經由 MoneyRecordEditPanel
+        // 呼叫 MoneyRecordManager.AddRecord() 儲存完成。
+
+        // 此時才刪除等待確認 / 需要確認區中的這張卡片。
         Destroy(gameObject);
     }
 }

@@ -1,8 +1,10 @@
-// 引入 TextMeshPro 命名空間。
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
-
-// 引入 Unity 基本功能。
 using UnityEngine;
+using UnityEngine.UI;
 
 // 建立快速記帳輸入介面控制器。
 
@@ -57,7 +59,7 @@ public class QuickRecordInputController : MonoBehaviour
     // 成功解析結果使用的 Prefab。
     [Tooltip("分析結果成功 Prefab")]public GameObject parsedRecordItemPrefab;
     // 失敗解析結果使用的 Prefab。
-    [Tooltip("分析結果失敗 Prefab")] public GameObject parsedErrorRecordItemPrefab;
+    [Tooltip("分析結果失敗 Prefab")] public GameObject failedRecordItemPrefab;
 
     // ==============================
     // 其他腳本
@@ -65,6 +67,10 @@ public class QuickRecordInputController : MonoBehaviour
 
     [Header("腳本")]
     [Tooltip("帳目資料管理器")] public MoneyRecordManager moneyRecordManager;
+    // 原本正式帳目使用的編輯面板。
+    public MoneyRecordEditPanel moneyRecordEditPanel;
+    // 全系統共用的刪除確認框。
+    public DeleteConfirmPanel deleteConfirmPanel;
 
     // 物件初始化時執行。
     private void Awake()
@@ -235,7 +241,7 @@ public class QuickRecordInputController : MonoBehaviour
         }
 
         // 檢查 Prefab 是否存在。
-        if (parsedErrorRecordItemPrefab == null)
+        if (failedRecordItemPrefab == null)
         {
             // 顯示錯誤。
             Debug.LogError(
@@ -283,16 +289,16 @@ public class QuickRecordInputController : MonoBehaviour
         // 將分析結果、原始文字與帳目管理器傳給卡片。
         item.Setup(
             result,
-            originalSentence,
-            moneyRecordManager);
+            originalSentence);
     }
 
     // 將分析失敗的內容顯示在第三區。
+    // 在無法辨識區建立一張正式的分析失敗卡片。
     private void CreateFailedResult(
         RecordParseResult result,
         string originalSentence)
     {
-        // 檢查失敗區是否存在。
+        // 檢查 FailedContent 是否有正確連接。
         if (failedContent == null)
         {
             // 顯示錯誤。
@@ -303,29 +309,56 @@ public class QuickRecordInputController : MonoBehaviour
             return;
         }
 
-        // 建立一個新的 UI 空物件。
-        GameObject failedObject =
-            new GameObject(
-                "FailedRecordItem");
 
-        // 將物件放到失敗區下面。
-        failedObject.transform.SetParent(
-            failedContent,
-            false);
+        // 檢查失敗資料 Prefab 是否有正確連接。
+        if (failedRecordItemPrefab == null)
+        {
+            // 顯示錯誤。
+            Debug.LogError(
+                "QuickRecordInputController 沒有連接 Failed Record Item Prefab。");
 
-        // 加入 RectTransform，
-        // 讓這個物件可以存在於 UI 中。
-        RectTransform rectTransform =
-            failedObject.AddComponent<RectTransform>();
+            // 中止建立。
+            return;
+        }
 
-        // 加入 TextMeshProUGUI 元件。
-        TextMeshProUGUI text =
-            failedObject.AddComponent<TextMeshProUGUI>();
 
-        // 顯示失敗原因與原始文字。
-        text.text =
-            $"分析失敗：{result.message}\n" +
-            $"原文：{originalSentence}";
+        // 在 FailedContent 底下建立失敗資料 Prefab。
+        GameObject itemObject =
+            Instantiate(
+                failedRecordItemPrefab,
+                failedContent);
+
+
+        // 取得 Prefab 上的 FailedRecordItem 腳本。
+        FailedRecordItem item =
+            itemObject.GetComponent<FailedRecordItem>();
+
+
+        // 檢查 Prefab 是否真的有掛腳本。
+        if (item == null)
+        {
+            // 顯示錯誤。
+            Debug.LogError(
+                "FailedRecordItem Prefab 沒有掛 FailedRecordItem 腳本。");
+
+            // 刪除錯誤產生的物件。
+            Destroy(itemObject);
+
+            // 中止設定。
+            return;
+        }
+
+        // 檢查 Scene 裡的控制器是否有成功連接。
+        Debug.Log(
+            $"CreateFailedResult：" +
+            $"MoneyRecordEditPanel = {(moneyRecordEditPanel != null ? "有" : "NULL")}，" +
+            $"DeleteConfirmPanel = {(deleteConfirmPanel != null ? "有" : "NULL")}");
+        // 將失敗資料需要的所有 Scene 物件交給新產生的 Prefab。
+        item.Setup(
+            result,
+            originalSentence,
+            DateTime.Now,
+            sentenceInput);
     }
     // ==============================
     // 儲存分析結果
